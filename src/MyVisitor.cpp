@@ -10,20 +10,17 @@ bool MyVisitor::VisitEnter(const TiXmlElement &element, const TiXmlAttribute *fi
     TiXmlAttribute *attribute = const_cast<TiXmlAttribute *>(firstAttribute);
 
     if (!attribute) {
-        std::cout<<"false"<<std::endl;
         return false;
     }
 
     //change attribute depending on operation type
     if (!changeAttribute(attribute)) {
-        std::cout<<"false"<<std::endl;
         return false;
     }
 
     //change all other attribute for this element
     while (attribute = attribute->Next()) {
         if (!changeAttribute(attribute)) {
-            std::cout<<"false"<<std::endl;
             return false;
         }
     }
