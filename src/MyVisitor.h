@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <algorithm>
-#include "tinyxml.h"
+#include "../tinyxml/tinyxml.h"
 
 
 //class visitor for access xml elements

@@ -71,7 +71,7 @@ int main(int argc, char *argv[]) {
     TiXmlDocument doc;
 
     //open xml file
-    if (!doc.LoadFile(inputPath)) {
+    if (!doc.LoadFile(inputPath.c_str())) {
         std::cout << "Bad input file!" << std::endl;
         return 1;
     }
@@ -93,7 +93,7 @@ int main(int argc, char *argv[]) {
     }
 
     //save xml file
-    if (!doc.SaveFile(outputPath)) {
+    if (!doc.SaveFile(outputPath.c_str())) {
         std::cout << "Bad output file!" << std::endl;
         return 1;
     }
