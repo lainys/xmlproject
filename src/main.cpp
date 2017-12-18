@@ -96,8 +96,6 @@ int main(int argc, char *argv[]) {
     //create xml document
     TiXmlDocument doc;
 
-
-    //loadFile(&doc,inputPath);
     //open xml file
     if (!doc.LoadFile(inputPath)) {
         std::cout << "Bad input file!" << std::endl;
@@ -108,7 +106,6 @@ int main(int argc, char *argv[]) {
     //visitor for enter element with attribute
     MyVisitor *visitor = new MyVisitor(atoi(operationType.c_str()));
 
-    std::cout << "1" << std::endl;
     //getting first element of xml document
     TiXmlNode *element = doc.FirstChild();
     if (element != NULL) {
@@ -116,15 +113,12 @@ int main(int argc, char *argv[]) {
         element->Accept(visitor);
     }
 
-    std::cout << "2" << std::endl;
     //visit other elements in doc
     while((element = doc.IterateChildren(element))!=NULL){
         element->Accept(visitor);
     }
 
-    std::cout << "3" << std::endl;
     //save xml file
-    //saveFile(&doc,outputPath);
     if (!doc.SaveFile(outputPath)) {
         std::cout << "Bad output file!" << std::endl;
         return 1;
