@@ -2,32 +2,6 @@
 #include <getopt.h>
 #include "MyVisitor.h"
 
-//function for saving xml file to outputPath
-bool saveFile(TiXmlDocument *document, std::string outputPath) {
-    std::cout << "Saving xml document to " << outputPath << std::endl;
-
-    if (!document->SaveFile(outputPath)) {
-        std::cout << "Bad output file!" << std::endl;
-        return false;
-    }
-
-    std::cout << "Saving successfully!" << std::endl;
-    return true;
-}
-
-//function for loading xml file from inputPath
-bool loadFile(TiXmlDocument *document, std::string inputPath) {
-    std::cout << "Loading xml document from " << inputPath << std::endl;
-
-    if (!document->LoadFile(inputPath)) {
-        std::cout << "Bad input file!" << std::endl;
-        return false;
-    }
-
-    std::cout << "Loading successfully!" << std::endl;
-    return true;
-}
-
 void parseArgs(int argc, char *argv[], std::string &inputPath, std::string &outputPath, std::string &operationType) {
 
     //list of arguments

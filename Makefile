@@ -14,8 +14,8 @@ build:
 	${COMPILER} ${RES} -o ./bin/${EXEC_NAME}
 
 run: ./bin/${EXEC_NAME}
-	./bin/${EXEC_NAME} --in input --out output1.xml --operation 1
-	./bin/${EXEC_NAME} --in input --out output2.xml --operation 2
+	./bin/${EXEC_NAME} --in input.xml --out bin/output1.xml --operation 1
+	./bin/${EXEC_NAME} --in input.xml --out bin/output2.xml --operation 2
 
 clean: ./bin/
 	rm -R ./bin
